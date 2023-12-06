@@ -1,65 +1,70 @@
-<<!-- Assuming you have the HTML structure here -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clothing Store</title>
+    <link rel="stylesheet" href="Nouveau Document texte.css">
+</head>
+<body>
+    <header>
+        <h1>Clothing Store</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Shop</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">Cart</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <section class="product">
+            <img src="product1.jpg" alt="Product 1">
+            <h2>Product 1</h2>
+            <p>Price: $29.99</p>
+            <button>Add to Cart</button>
+        </section>
 
-<script>
-    // Array to store products
-    var products = [];
+        <section class="product">
+            <img src="product2.jpg" alt="Product 2">
+            <h2>Product 2</h2>
+            <p>Price: $39.99</p>
+            <button>Add to Cart</button>
+        </section>
 
-    function addProduct() {
-        // Get form values
-        var productName = document.getElementById("productName").value;
-        var productPrice = parseFloat(document.getElementById("productPrice").value);
-        var productQuantity = parseInt(document.getElementById("productQuantity").value);
-        var productDiscount = parseFloat(document.getElementById("productDiscount").value) || 0;
+        <!-- More product sections here -->
+    </main>
+    <main>
+        <!-- Product sections here -->
+    
+        <section class="payment-section">
+            <h2>Payment Information</h2>
+            <form class="payment-form">
+                <label for="paymentMethod">Payment Method:</label>
+                <select id="paymentMethod" name="paymentMethod" required>
+                    <option value="cod">Cash on Delivery</option>
+                    <option value="bankTransfer">Bank Transfer</option>
+                    <option value="other">Other</option>
+                </select>
+    
+                <label for="additionalInfo">Additional Information:</label>
+                <input type="text" id="additionalInfo" name="additionalInfo" placeholder="Additional payment instructions">
+    
+                <input type="submit" value="Proceed to Payment">
+            </form>
+        </section>
+    </main>
+    
+    <!-- ... (remaining HTML code) -->
 
-        // Calculate total price after discount
-        var totalPrice = productPrice * productQuantity * (1 - productDiscount / 100);
+    <footer>
+        <p>&copy; 2023 Clothing Store</p>
+    </footer>
+    <script src="reda.js"></script>
+</body>
 
-        // Create product object
-        var product = {
-            name: productName,
-            price: productPrice,
-            quantity: productQuantity,
-            discount: productDiscount,
-            totalPrice: totalPrice,
-            entryDate: new Date().toLocaleDateString()
-        };
+</html>
 
-        // Add product to the array
-        products.push(product);
 
-        // Display products in a table
-        displayProducts();
-    }
-
-    function displayProducts() {
-        // Get the table body
-        var tableBody = document.getElementById("productTableBody");
-
-        // Clear existing rows
-        tableBody.innerHTML = "";
-
-        // Loop through products and add rows to the table
-        for (var i = 0; i < products.length; i++) {
-            var product = products[i];
-
-            // Create a new row
-            var row = tableBody.insertRow(i);
-
-            // Insert cells for each property
-            var nameCell = row.insertCell(0);
-            var priceCell = row.insertCell(1);
-            var quantityCell = row.insertCell(2);
-            var discountCell = row.insertCell(3);
-            var totalCell = row.insertCell(4);
-            var entryDateCell = row.insertCell(5);
-
-            // Set cell values
-            nameCell.innerHTML = product.name;
-            priceCell.innerHTML = product.price;
-            quantityCell.innerHTML = product.quantity;
-            discountCell.innerHTML = product.discount + "%";
-            totalCell.innerHTML = product.totalPrice;
-            entryDateCell.innerHTML = product.entryDate;
-        }
-    }
-</script>
