@@ -1,7 +1,65 @@
-<!DOCTYPE html>
-<html>
-<body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
-</body>
-</html>
+<<!-- Assuming you have the HTML structure here -->
+
+<script>
+    // Array to store products
+    var products = [];
+
+    function addProduct() {
+        // Get form values
+        var productName = document.getElementById("productName").value;
+        var productPrice = parseFloat(document.getElementById("productPrice").value);
+        var productQuantity = parseInt(document.getElementById("productQuantity").value);
+        var productDiscount = parseFloat(document.getElementById("productDiscount").value) || 0;
+
+        // Calculate total price after discount
+        var totalPrice = productPrice * productQuantity * (1 - productDiscount / 100);
+
+        // Create product object
+        var product = {
+            name: productName,
+            price: productPrice,
+            quantity: productQuantity,
+            discount: productDiscount,
+            totalPrice: totalPrice,
+            entryDate: new Date().toLocaleDateString()
+        };
+
+        // Add product to the array
+        products.push(product);
+
+        // Display products in a table
+        displayProducts();
+    }
+
+    function displayProducts() {
+        // Get the table body
+        var tableBody = document.getElementById("productTableBody");
+
+        // Clear existing rows
+        tableBody.innerHTML = "";
+
+        // Loop through products and add rows to the table
+        for (var i = 0; i < products.length; i++) {
+            var product = products[i];
+
+            // Create a new row
+            var row = tableBody.insertRow(i);
+
+            // Insert cells for each property
+            var nameCell = row.insertCell(0);
+            var priceCell = row.insertCell(1);
+            var quantityCell = row.insertCell(2);
+            var discountCell = row.insertCell(3);
+            var totalCell = row.insertCell(4);
+            var entryDateCell = row.insertCell(5);
+
+            // Set cell values
+            nameCell.innerHTML = product.name;
+            priceCell.innerHTML = product.price;
+            quantityCell.innerHTML = product.quantity;
+            discountCell.innerHTML = product.discount + "%";
+            totalCell.innerHTML = product.totalPrice;
+            entryDateCell.innerHTML = product.entryDate;
+        }
+    }
+</script>
