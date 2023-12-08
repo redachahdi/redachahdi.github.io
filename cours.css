@@ -47,7 +47,8 @@ main {
 }
 
 .product img {
-    max-width: 20%;
+    width: 20%;
+    height: auto ;
 }
 
 .product h2 {
