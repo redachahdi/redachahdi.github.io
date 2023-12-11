@@ -20,17 +20,19 @@ document.addEventListener("DOMContentLoaded", function () {
     const footer = document.querySelector("footer p");
     footer.textContent = `\u00A9 ${new Date().getFullYear()} Clothing Store`;
   
-    // Make the image bigger on mouseover and revert on mouseout
+    // Make the image bigger on mouseover and revert on mouseout with a 3D effect
     const productImages = document.querySelectorAll(".product img");
     productImages.forEach(function (image) {
       image.addEventListener("mouseover", function () {
         // Increase the size of the image on mouseover
         image.style.width = "50%"; // You can adjust the size based on your needs
+        image.style.transform = "rotateY(45deg)"; // Apply a 3D rotation effect
       });
   
       image.addEventListener("mouseout", function () {
-        // Revert the size of the image on mouseout
+        // Revert the size and rotation of the image on mouseout
         image.style.width = "25%"; // Set it back to the original size or adjust as needed
+        image.style.transform = "rotateY(0deg)"; // Revert the rotation
       });
     });
   });
