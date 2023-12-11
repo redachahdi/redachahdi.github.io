@@ -1,15 +1,13 @@
 // reda.js
 
 document.addEventListener("DOMContentLoaded", function () {
-    // Add event listeners or any dynamic behavior here
-  
-    // Example: Change the background color of the header on click
+    // Change the background color of the header on click
     const header = document.querySelector("header");
     header.addEventListener("click", function () {
       header.style.backgroundColor = "#555";
     });
   
-    // Example: Add an item to the cart when a product's "Add to Cart" button is clicked
+    // Add an item to the cart when a product's "Add to Cart" button is clicked
     const addToCartButtons = document.querySelectorAll(".product button");
     addToCartButtons.forEach(function (button) {
       button.addEventListener("click", function () {
@@ -18,19 +16,22 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     });
   
-    // Example: Change the footer text dynamically
+    // Change the footer text dynamically
     const footer = document.querySelector("footer p");
     footer.textContent = `\u00A9 ${new Date().getFullYear()} Clothing Store`;
   
-    // Example: Make the image bigger when clicked
+    // Make the image bigger on mouseover and revert on mouseout
     const productImages = document.querySelectorAll(".product img");
     productImages.forEach(function (image) {
-      image.addEventListener("click", function () {
-        // Increase the size of the image
+      image.addEventListener("mouseover", function () {
+        // Increase the size of the image on mouseover
         image.style.width = "50%"; // You can adjust the size based on your needs
       });
-    });
   
-    // You can add more dynamic behavior based on your requirements.
+      image.addEventListener("mouseout", function () {
+        // Revert the size of the image on mouseout
+        image.style.width = "25%"; // Set it back to the original size or adjust as needed
+      });
+    });
   });
   
