@@ -38,11 +38,12 @@ main {
 }
 
 .product {
-    background-color: #fff;
+    background-color: #756e23e1;
     border: 1px solid #ccc;
     border-radius: 5px;
     padding: 20px;
     margin: 10px;
+
     text-align: center;
 }
 
@@ -61,8 +62,8 @@ main {
 }
 
 button {
-    background-color: #333;
-    color: #3b6830;
+    background-color: #f7f6f6;
+    color: #050505;
     border: none;
     padding: 10px 20px;
     border-radius: 5px;
