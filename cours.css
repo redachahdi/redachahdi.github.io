@@ -47,7 +47,7 @@ main {
 }
 
 .product img {
-    width: 100%;
+    width: 50%;
     height: auto;
 }
 
@@ -62,7 +62,7 @@ main {
 
 button {
     background-color: #333;
-    color: #fff;
+    color: #859d7f;
     border: none;
     padding: 10px 20px;
     border-radius: 5px;
