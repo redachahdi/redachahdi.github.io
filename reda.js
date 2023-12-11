@@ -1,4 +1,4 @@
-// script.js
+// reda.js
 
 document.addEventListener("DOMContentLoaded", function () {
     // Add event listeners or any dynamic behavior here
@@ -21,6 +21,15 @@ document.addEventListener("DOMContentLoaded", function () {
     // Example: Change the footer text dynamically
     const footer = document.querySelector("footer p");
     footer.textContent = `\u00A9 ${new Date().getFullYear()} Clothing Store`;
+  
+    // Example: Make the image bigger when clicked
+    const productImages = document.querySelectorAll(".product img");
+    productImages.forEach(function (image) {
+      image.addEventListener("click", function () {
+        // Increase the size of the image
+        image.style.width = "50%"; // You can adjust the size based on your needs
+      });
+    });
   
     // You can add more dynamic behavior based on your requirements.
   });
