@@ -1,0 +1,47 @@
+<!-- payment-form.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://static.systempay.fr/static/js/krypton-client/V4.0/stable/kr-payment-form.min.js"></script>
+</head>
+<body>
+    <section class="payment-section">
+        <h2>Payment Information</h2>
+        <form class="payment-form" id="visaPaymentForm">
+            <label for="paymentMethod">Payment Method:</label>
+            <select id="paymentMethod" name="paymentMethod" required>
+                <option value="cod">Cash on Delivery</option>
+                <option value="bankTransfer">Bank Transfer</option>
+                <option value="visa">Visa</option>
+            </select>
+
+            <label for="additionalInfo">Additional Information:</label>
+            <input type="text" id="additionalInfo" name="additionalInfo" placeholder="Additional payment instructions">
+
+            <label for="cardNumber">Card Number:</label>
+            <input type="text" id="cardNumber" name="cardNumber" required>
+
+            <label for="expiryDate">Expiry Date:</label>
+            <input type="text" id="expiryDate" name="expiryDate" placeholder="MM/YY" required>
+
+            <label for="cvv">CVV:</label>
+            <input type="text" id="cvv" name="cvv" required>
+
+            <input type="submit" value="Proceed to Payment">
+        </form>
+    </section>
+
+    <script>
+        var paymentForm = new Krypton.PaymentForm({
+            publicKey: "73239078:testpublickey_Zr3fXIKKx0mLY9YNBQEan42ano2QsdrLuyb2W54QWmUJQ",
+            postUrlSuccess: "paid.html"
+        });
+
+        $("#visaPaymentForm").submit(function (event) {
+            event.preventDefault();
+            paymentForm.submitForm(this);
+        });
+    </script>
+</body>
+</html>
