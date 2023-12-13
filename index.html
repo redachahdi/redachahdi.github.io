@@ -1,16 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Meta tags for character set and responsive design -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Title of the webpage -->
     <title>Clothing Store</title>
+    <!-- Link to external stylesheet -->
     <link rel="stylesheet" href="cours.css">
 </head>
 <body>
+    <!-- Header section containing the store name and navigation menu -->
     <header>
         <h1>Clothing Store</h1>
         <nav>
             <ul>
+                <!-- Navigation links -->
                 <li><a href="#">Home</a></li>
                 <li><a href="#">Shop</a></li>
                 <li><a href="#">Contact</a></li>
@@ -19,7 +24,9 @@
         </nav>
     </header>
     
+    <!-- Main content of the webpage -->
     <main>
+        <!-- Product section 1 -->
         <section class="product">
             <img src="black_hoodie_mockup.jpg" alt="Product 1" >
             <h2>Product 1</h2>
@@ -27,6 +34,7 @@
             <button>Add to Cart</button>
         </section>
 
+        <!-- Product section 2 -->
         <section class="product">
             <img src="little-fashionista-colored-background-mom-s-shoes.jpg" alt="Product 2" >
             <h2>Product 2</h2>
@@ -34,13 +42,12 @@
             <button>Add to Cart</button>
         </section>
 
-        <!-- More product sections here -->
-    </main>
-    <main>
-        <!-- Product sections here -->
-    
+        <!-- More product sections can be added here -->
+
+        <!-- Payment section -->
         <section class="payment-section">
             <h2>Payment Information</h2>
+            <!-- Payment form with method selection and additional information -->
             <form class="payment-form">
                 <label for="paymentMethod">Payment Method:</label>
                 <select id="paymentMethod" name="paymentMethod" required>
@@ -52,18 +59,18 @@
                 <label for="additionalInfo">Additional Information:</label>
                 <input type="text" id="additionalInfo" name="additionalInfo" placeholder="Additional payment instructions">
     
+                <!-- Submit button to proceed to payment -->
                 <input type="submit" value="Proceed to Payment">
-               
             </form>
         </section>
-       
     </main>
     
-    <!-- ... (remaining HTML code) -->
-
+    <!-- Footer section containing the copyright information -->
     <footer>
         <p>&copy; 2023 Clothing Store</p>
     </footer>
+
+    <!-- Script tags for JavaScript files -->
     <script src="reda.js"></script>
     <script 
     src="https://static.systempay.fr/static/js/krypton-client/V4.0/stable/kr-payment-form.min.js" 
@@ -71,7 +78,4 @@
     kr-post-url-success="paid.html">
    </script>
 </body>
-
 </html>
-
-
