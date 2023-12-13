@@ -39,5 +39,6 @@ This project is a simple web page for a clothing store, featuring a responsive d
 ## License
 
 This project is licensed under the [MIT License](LICENSE).
+[Video_2023_12_06-2.webm](https://github.com/redachahdi/redachahdi.github.io/assets/125477393/a3179867-a886-41b4-b462-c642b4b2eb26)
 
 © 2023 Clothing Store
